@@ -1,9 +1,13 @@
-$(function () {
+$(function () { 
 
-    $('.menu a').on('click', function (e) {
+    var menuLink = $('.menu a');
+    var btnUp = $('.button-up');
+
+
+    menuLink.on('click', function (e) {
         e.preventDefault();
         
-        $('.menu a').removeClass('active').filter(this).addClass('active');
+        menuLink.removeClass('active').filter(this).addClass('active');
         
         var selector = $(this).attr('href'); /* #about - строка */
         var h = $(selector); /* jquery-элемент заголовка */
@@ -18,7 +22,6 @@ $(function () {
 
     $(document).on('scroll', function() {
         var fromTop = $(this).scrollTop();
-        var menuLink = $('.menu a');
         var h = $('h2');
 
 
@@ -30,14 +33,14 @@ $(function () {
         });
 
         if (fromTop > 300) {
-            $('.button-up').fadeIn(300);
+            btnUp.fadeIn(300);
         } else {
-            $('.button-up').fadeOut(300);
+            btnUp.fadeOut(300);
         }
     });
 
 
-    $('.button-up').on('click', function (e) {
+    btnUp.on('click', function (e) {
         e.preventDefault();
 
         menuLink.removeClass('active');
