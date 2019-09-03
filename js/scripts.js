@@ -18,7 +18,7 @@ $(function () {
     });
 
 
-    function scroll() {
+    function scrollUpd() {
         var fromTop = $(this).scrollTop();
         var h = $('h2');
 
@@ -35,12 +35,8 @@ $(function () {
             btnUp.fadeOut(300);
         }
     }
-    scroll();
-
-
-    $(document).on('scroll', function() {
-        scroll();
-    });
+    scrollUpd();
+    $(document).on('scroll', scrollUpd);
 
 
     btnUp.on('click', function (e) {
