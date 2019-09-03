@@ -14,16 +14,13 @@ $(function () {
         
         $('html, body').animate({
             scrollTop: h.offset().top - 70
-        }, 400);
-        
-        
+        }, 400); 
     });
 
 
-    $(document).on('scroll', function() {
+    function scroll() {
         var fromTop = $(this).scrollTop();
         var h = $('h2');
-
 
         menuLink.each(function(i) {
             if (fromTop > h.eq(i).offset().top - 200) {
@@ -37,6 +34,12 @@ $(function () {
         } else {
             btnUp.fadeOut(300);
         }
+    }
+    scroll();
+
+
+    $(document).on('scroll', function() {
+        scroll();
     });
 
 
@@ -48,6 +51,5 @@ $(function () {
         $('html, body').animate({
             scrollTop: 0
         }, 400);
-
     });
 });
